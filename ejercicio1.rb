@@ -19,7 +19,17 @@ print c
 puts ''
 
 # 3. Utilizando map generar un nuevo arreglo que contenga todos los valores convertidos a string.
+
+d = a.map { |e| e.to_s }
+print d
+puts ''
+
 # 4. Utilizando reject descartar todos los elementos menores a 5 en el array.
+
+e = a.reject { |i| i < 5 }
+print e
+puts ''
+
 # 5. Utilizando select descartar todos los elementos mayores a 5 en el array.
 # 6. Utilizando inject obtener la suma de todos los elementos del array.
 # 7. Utilizando group_by agrupar todos los números por paridad (si son pares, es un grupos, si son impares es otro grupo).
