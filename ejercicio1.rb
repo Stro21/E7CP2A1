@@ -1,19 +1,22 @@
 # rubocop:disable LineLength
 # rubocop:disable AsciiComments
+# rubocop:disable SymbolProc
 
 a = [1, 2, 3, 9, 1, 4, 5, 2, 3, 6, 6]
 print a
-puts "\n\n"
+puts ''
 
 # 1. Utilizando map generar un nuevo arreglo con cada valor aumentado en 1.
 
 b = a.map { |e| e + 1 }
 print b
-puts "\n\n"
+puts ''
 
 # 2. Utilizando map generar un nuevo arreglo que contenga todos los valores convertidos a float.
 
-
+c = a.map { |e| e.to_f }
+print c
+puts ''
 
 # 3. Utilizando map generar un nuevo arreglo que contenga todos los valores convertidos a string.
 # 4. Utilizando reject descartar todos los elementos menores a 5 en el array.
@@ -24,3 +27,4 @@ puts "\n\n"
 
 # rubocop:enable LineLength
 # rubocop:enable AsciiComments
+# rubocop:enable SymbolProc
