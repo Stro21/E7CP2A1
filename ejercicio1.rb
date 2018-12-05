@@ -31,6 +31,11 @@ print e
 puts ''
 
 # 5. Utilizando select descartar todos los elementos mayores a 5 en el array.
+
+f = a.reject { |i| i > 5 }
+print f
+puts ''
+
 # 6. Utilizando inject obtener la suma de todos los elementos del array.
 # 7. Utilizando group_by agrupar todos los números por paridad (si son pares, es un grupos, si son impares es otro grupo).
 # 8. Utilizando group_by agrupar todos los números mayores y menores que 6.
