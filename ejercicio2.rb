@@ -2,6 +2,8 @@
 # rubocop:disable AsciiComments
 
 nombres = %w[Violeta Andino Clemente Javiera Paula Pia Ray]
+print nombres
+puts ''
 
 # 1. Extraer todos los elementos que excedan mas de 5 caracteres utilizando el método .select.
 
@@ -15,9 +17,13 @@ b = nombres.map(&:downcase!)
 print b
 puts ''
 
+nombres = nombres.map(&:capitalize)
+print nombres
+puts ''
+
 # 3. Utilizando .select para crear un arreglo con todos los nombres que empiecen con P.
 
-c = nombres.select { |e| e.to_s.chr == 'P' }
+c = nombres.select { |e| e[0] == 'P' }
 print c
 puts ''
 
