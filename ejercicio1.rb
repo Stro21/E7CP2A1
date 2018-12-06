@@ -59,6 +59,21 @@ puts ''
 
 # 8. Utilizando group_by agrupar todos los números mayores y menores que 6.
 
+def mayor_seis(array)
+  arr = array.group_by do |i|
+    if i > 6
+      'Mayores que 6'
+    else
+      'Menores que 6'
+    end
+  end
+  arr
+end
+
+h = mayor_seis(a)
+print h
+puts ''
+
 # rubocop:enable LineLength
 # rubocop:enable AsciiComments
 # rubocop:enable SymbolProc
