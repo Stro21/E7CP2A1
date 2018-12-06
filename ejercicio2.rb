@@ -16,10 +16,7 @@ puts ''
 b = nombres.map(&:downcase!)
 print b
 puts ''
-
 nombres = nombres.map(&:capitalize)
-print nombres
-puts ''
 
 # 3. Utilizando .select para crear un arreglo con todos los nombres que empiecen con P.
 
@@ -28,6 +25,12 @@ print c
 puts ''
 
 # 4. Utilizando .map crear un arreglo único con la cantidad de letras que tiene cada nombre.
+
+d = []
+nombres.map { |e| d.push(e.length) }
+print d
+puts ''
+
 # 5. Utilizando .map y .gsub eliminar las vocales de todos los nombres.
 
 # rubocop:enable LineLength
