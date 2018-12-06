@@ -41,6 +41,22 @@ puts ''
 puts(a.inject { |sum, n| sum + n })
 
 # 7. Utilizando group_by agrupar todos los números por paridad (si son pares, es un grupos, si son impares es otro grupo).
+
+def par_impar(array)
+  arr = array.group_by do |i|
+    if (i % 2).zero?
+      'par'
+    else
+      'impar'
+    end
+  end
+  arr
+end
+
+g = par_impar(a)
+print g
+puts ''
+
 # 8. Utilizando group_by agrupar todos los números mayores y menores que 6.
 
 # rubocop:enable LineLength
