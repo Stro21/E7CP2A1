@@ -16,6 +16,11 @@ print b
 puts ''
 
 # 3. Utilizando .select para crear un arreglo con todos los nombres que empiecen con P.
+
+c = nombres.select { |e| e.to_s.chr == 'P' }
+print c
+puts ''
+
 # 4. Utilizando .map crear un arreglo único con la cantidad de letras que tiene cada nombre.
 # 5. Utilizando .map y .gsub eliminar las vocales de todos los nombres.
 
