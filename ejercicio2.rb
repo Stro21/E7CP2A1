@@ -33,5 +33,9 @@ puts ''
 
 # 5. Utilizando .map y .gsub eliminar las vocales de todos los nombres.
 
+e = nombres.map { |nombre| nombre.gsub(/[aeiou]/, '') }
+print e
+puts ''
+
 # rubocop:enable LineLength
 # rubocop:enable AsciiComments
