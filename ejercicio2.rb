@@ -11,7 +11,7 @@ puts ''
 
 # 2. Utilizando .map crear una arreglo con los nombres en minúscula.
 
-b = nombres.map { |e| e.downcase! }
+b = nombres.map(&:downcase!)
 print b
 puts ''
 
