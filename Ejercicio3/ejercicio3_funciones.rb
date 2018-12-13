@@ -1,6 +1,6 @@
 # rubocop:disable LineLength
 # rubocop:disable MethodLength
-# rubocop:disable NegatedWhile
+# rubocop:disable AbcSize
 # rubocop:disable MultipleComparison
 
 def ingresar_persona(str1, str2, str3, str4)
@@ -29,7 +29,9 @@ end
 
 def opciones(array, opt)
   if opt == 1
-
+    opcion1(array)
+  elsif opt == 10
+    puts 'Se salio del programa.'
   else
     puts 'Opción incorrecta.'
     programa(array)
@@ -38,11 +40,10 @@ end
 
 def opcion1(array)
   puts 'Ingresar nombre de la persona'
-  name = chomp.to_s
+  name = gets.chomp.to_s
   age = ingresar_edad
   puts 'Ingresar comuna donde vive la persona'
-  comuna = chomp.to_s
-  puts 'Ingresar género de la persona.'
+  comuna = gets.chomp.to_s
   sexo = ingresar_sexo
   persona = ingresar_persona(name, age, comuna, sexo)
   array.push(persona)
@@ -54,7 +55,7 @@ end
 def ingresar_edad
   puts 'Ingrese la edad de la persona en años'
   age = gets.chomp.to_i
-  until !age.is_a? Numeric
+  until age.is_a? Numeric
     puts 'Ingrese la edad de la persona en años'
     age = gets.chomp.to_i
   end
@@ -63,7 +64,7 @@ end
 
 def ingresar_sexo
   puts 'Ingresar género de la persona (es con mayuscula).'
-  sexo = chomp.to_s
+  sexo = gets.chomp.to_s
   until sexo_valido(sexo)
     puts 'Ingresar género de la persona (es con mayuscula).'
     sexo = chomp.to_s
@@ -77,5 +78,5 @@ end
 
 # rubocop:enable LineLength
 # rubocop:enable MethodLength
-# rubocop:enable NegatedWhile
+# rubocop:enable AbcSize
 # rubocop:enable MultipleComparison
