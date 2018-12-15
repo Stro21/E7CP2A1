@@ -3,6 +3,8 @@
 # rubocop:disable AbcSize
 # rubocop:disable MultipleComparison
 # rubocop:disable ConditionalAssignment
+# rubocop:disable CyclomaticComplexity
+# rubocop:disable PerceivedComplexity
 
 def ingresar_persona(str1, str2, str3, str4)
   persona = {}
@@ -37,6 +39,8 @@ def opciones(array, opt)
     opcion3(array)
   elsif opt == 4
     opcion4(array)
+  elsif opt == 5
+    opcion5(array)
   elsif opt == 10
     puts 'Se salio del programa.'
   else
@@ -160,8 +164,20 @@ def print_data(datos)
 end
 
 def opcion4(array)
-  puts array.length
+  puts 'La cantidad de personas ingresadas son ' + array.length + '.'
   programa(array)
+end
+
+def opcion5(array)
+  comunas = []
+  array.each { |per| comunas.push(per[:comuna]) if no_esta(array, per[:comuna]) }
+  comunas.each { |comuna| puts comuna }
+  programa(array)
+end
+
+def no_esta(array, str)
+  array.each { |e| return false if e[:comuna] == str }
+  true
 end
 
 # rubocop:enable LineLength
@@ -169,3 +185,5 @@ end
 # rubocop:enable AbcSize
 # rubocop:enable MultipleComparison
 # rubocop:enable ConditionalAssignment
+# rubocop:enable CyclomaticComplexity
+# rubocop:enable PerceivedComplexity
