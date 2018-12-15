@@ -33,6 +33,8 @@ def opciones(array, opt)
     opcion1(array)
   elsif opt == 2
     opcion2(array)
+  elsif opt == 3
+    opcion3(array)
   elsif opt == 10
     puts 'Se salio del programa.'
   else
@@ -50,8 +52,7 @@ def opcion1(array)
   sexo = ingresar_sexo
   persona = ingresar_persona(name, age, comuna, sexo)
   array.push(persona)
-  print array
-  puts ''
+  print_data(array)
   programa(array)
 end
 
@@ -101,6 +102,7 @@ def modificar_datos(array, ind)
   persona = hacer_modificacion(persona, ind, 'edad', false)
   persona = hacer_modificacion(persona, ind, 'comuna', true)
   persona = hacer_modificacion(persona, ind, 'género', true)
+  print_data(persona)
   persona
 end
 
@@ -136,6 +138,28 @@ end
 def si_no(str)
   str == 'Si' || str == 'No' || str == 'si' || str == 'no'
 end
+
+def opcion3(array)
+  puts 'Seleccionar nombre a buscar para eliminarlo.'
+  nombre = gets.chomp.to_s
+  if nombre_esta(array, nombre)
+    index = search_index(array, nombre)
+    array.delete_at(index)
+  else
+    puts 'El nombre de la persona que quiere eliminar no esta.'
+  end
+  print_data(array)
+  programa(array)
+end
+
+def print_data(datos)
+  print datos
+  puts ''
+end
+
+# def opcion4(array)
+#
+# end
 
 # rubocop:enable LineLength
 # rubocop:enable MethodLength
