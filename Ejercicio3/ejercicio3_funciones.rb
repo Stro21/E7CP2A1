@@ -35,6 +35,8 @@ def opciones(array, opt)
     opcion2(array)
   elsif opt == 3
     opcion3(array)
+  elsif opt == 4
+    opcion4(array)
   elsif opt == 10
     puts 'Se salio del programa.'
   else
@@ -157,9 +159,10 @@ def print_data(datos)
   puts ''
 end
 
-# def opcion4(array)
-#
-# end
+def opcion4(array)
+  puts array.length
+  programa(array)
+end
 
 # rubocop:enable LineLength
 # rubocop:enable MethodLength
