@@ -164,19 +164,22 @@ def print_data(datos)
 end
 
 def opcion4(array)
-  puts 'La cantidad de personas ingresadas son ' + array.length + '.'
+  puts 'La cantidad de personas ingresadas son ' + array.length.to_s + '.'
   programa(array)
 end
 
 def opcion5(array)
   comunas = []
-  array.each { |per| comunas.push(per[:comuna]) if no_esta(array, per[:comuna]) }
+  array.each { |per| comunas.push(per[:comuna]) if no_esta(comunas, per[:comuna]) }
+  puts 'Todas las comunas que hay son:'
   comunas.each { |comuna| puts comuna }
   programa(array)
 end
 
 def no_esta(array, str)
-  array.each { |e| return false if e[:comuna] == str }
+  return true if array.nil?
+
+  array.each { |e| return false if e == str }
   true
 end
 
