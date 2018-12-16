@@ -45,6 +45,8 @@ def opciones(array, opt)
     opcion6(array)
   elsif opt == 7
     opcion7(array)
+  elsif opt == 8
+    opcion8(array)
   elsif opt == 10
     puts 'Se salio del programa.'
   else
@@ -199,9 +201,19 @@ def es_joven_adulto(edad)
 end
 
 def opcion7(array)
+  suma = suma_edades(array)
+  puts 'La suma de las edades es: ' + suma.to_s
+  programa(array)
+end
+
+def suma_edades(array)
   suma = 0
   array.each { |p| suma += p[:edad] }
-  puts 'La suma de las edades es: ' + suma.to_s
+  suma
+end
+
+def opcion8(array)
+  puts 'El promedio de las edades es ' + (suma_edades(array) / array.length).to_f.to_s
   programa(array)
 end
 
