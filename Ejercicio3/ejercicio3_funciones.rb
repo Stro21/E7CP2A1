@@ -41,6 +41,8 @@ def opciones(array, opt)
     opcion4(array)
   elsif opt == 5
     opcion5(array)
+  elsif opt == 6
+    opcion6(array)
   elsif opt == 10
     puts 'Se salio del programa.'
   else
@@ -181,6 +183,17 @@ def no_esta(array, str)
 
   array.each { |e| return false if e == str }
   true
+end
+
+def opcion6(array)
+  jovenes = []
+  array.each { |persona| jovenes.push(persona) if es_joven_adulto(persona[:edad]) }
+  print_data(jovenes)
+  programa(array)
+end
+
+def es_joven_adulto(edad)
+  edad >= 20 && edad <= 25
 end
 
 # rubocop:enable LineLength
