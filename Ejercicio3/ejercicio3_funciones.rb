@@ -43,6 +43,8 @@ def opciones(array, opt)
     opcion5(array)
   elsif opt == 6
     opcion6(array)
+  elsif opt == 7
+    opcion7(array)
   elsif opt == 10
     puts 'Se salio del programa.'
   else
@@ -194,6 +196,13 @@ end
 
 def es_joven_adulto(edad)
   edad >= 20 && edad <= 25
+end
+
+def opcion7(array)
+  suma = 0
+  array.each { |p| suma += p[:edad] }
+  puts 'La suma de las edades es: ' + suma.to_s
+  programa(array)
 end
 
 # rubocop:enable LineLength
